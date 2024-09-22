@@ -1,4 +1,4 @@
-package LoopsAndConditons;
+package LoopsAndConditions;
 
 public class Reverse{
     public static void main(String[] args)

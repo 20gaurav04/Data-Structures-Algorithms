@@ -1,4 +1,4 @@
-package LoopsAndConditons;
+package LoopsAndConditions;
 
 import java.util.Scanner;
 public class Calculator {

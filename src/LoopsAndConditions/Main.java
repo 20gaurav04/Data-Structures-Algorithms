@@ -1,4 +1,4 @@
-package Basics;
+package LoopsAndConditions;
 import java.util.Scanner;
 public class Main
  {

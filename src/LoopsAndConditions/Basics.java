@@ -1,4 +1,4 @@
-package Basics;
+package LoopsAndConditions;
 
 public class Basics{
     public static void main(String[] args) {
