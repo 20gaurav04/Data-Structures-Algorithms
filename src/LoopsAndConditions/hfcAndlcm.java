@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class hfcAndlcm
 {
     public static void main(String[] args) {
-        int i,temp,n1,n2,hcf=0,lcm;
+        int i,n1,n2,hcf=0,lcm;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first number");
         n1 = sc.nextInt();
