@@ -2,9 +2,9 @@ package BinarySearch;
 
 public class OrderAgnosticBS {
     public static void main(String[] args) {
-//        int [] arr = {1,2,3,4,5,6,7,8,9};
-        int[] arr = {9,4,3,2,-2,-5};
-        int target=-5;
+        int [] arr = {1,2,3,4,5,8,9};
+//        int[] arr = {9,4,3,2,-2,-5};
+        int target=7;
         System.out.print(BS(arr,target));
 
     }
@@ -13,7 +13,7 @@ public class OrderAgnosticBS {
         int start = 0;
         int end = arr.length-1;
 
-        boolean isAscending = arr[start] <arr [end];
+        boolean isAscending = arr[start] < arr [end];
 
         while(start<=end)
         {
@@ -44,6 +44,6 @@ public class OrderAgnosticBS {
             }
         }
         }
-        return -1;
+        return start;
     }
 }

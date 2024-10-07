@@ -3,7 +3,7 @@ package Questions;
 public class InfiniteArray {
     public static void main(String[] args) {
         int [] arr = { 1,3,5,6,8,33,55,69,95,220,550,999,1024,9999};
-        int target=220;
+        int target=95;
         int ans = answ(arr,target);
         System.out.print(ans);
 
