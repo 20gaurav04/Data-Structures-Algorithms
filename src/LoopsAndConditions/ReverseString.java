@@ -10,11 +10,11 @@ public class ReverseString {
         System.out.println("Inputted String : "+" "+str);
         char ch;
 
-        String nstr=" ";
-        for (int i=0; i<str.length(); i++) {
-            ch = str.charAt(i);
-            nstr = ch + nstr;
+            String nstr=" ";
+            for (int i=0; i<str.length(); i++) {
+                ch = str.charAt(i);
+                nstr = ch + nstr;
+            }
+            System.out.println("LoopingStatements.Reverse Of String: "+" "+nstr);
         }
-        System.out.println("LoopingStatements.Reverse Of String: "+" "+nstr);
-    }
 }
