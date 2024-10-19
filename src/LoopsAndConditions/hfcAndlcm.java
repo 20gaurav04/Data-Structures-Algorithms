@@ -1,7 +1,7 @@
 package LoopsAndConditions;
 import java.util.Scanner;
 
-public class hfcAndlcm
+public class    hfcAndlcm
 {
     public static void main(String[] args) {
         int i,n1,n2,hcf=0,lcm;

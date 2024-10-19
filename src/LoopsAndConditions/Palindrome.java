@@ -12,14 +12,14 @@ public class Palindrome
         int store = x;
         int rev=0;
 
-        while(store>0)
+        while(x>0)
         {
             int rem = x%10;
-            store/=10;
+            x/=10;
             rev=rev*10+rem;
 
         }
-        if(rev==x)
+        if(rev==store)
         {
             System.out.println("It is a palindrome.");
         }
