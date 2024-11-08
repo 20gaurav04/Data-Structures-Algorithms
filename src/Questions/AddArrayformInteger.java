@@ -1,26 +1,32 @@
 package Questions;
 //https://leetcode.com/problems/add-to-array-form-of-integer/
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class AddArrayformInteger {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
-        int k = 45;
-        System.out.print(addToArrayForm(arr,k));
+        int[] num = {1, 2, 6, 7};
+        int k = 34;
+        System.out.println(addToArrayForm(num, k)); // Output: [1, 2, 3, 4]
     }
-    static List<Integer> addToArrayForm(int[] arr,int k)
+    static List<Integer> addToArrayForm(int[] num,int k)
     {
-        List<Integer> NewList = new ArrayList<>();
-        int newNum=0;
+        List<Integer> res = new ArrayList<>();
+        int i =num.length-1;
 
-        
-        for(int i:arr)
+        while(i>=0||k>0)
         {
-            NewList.add(i);
+            if(i>=0)
+            {
+                k+=num[i];
+            }
+            res.add(k%10);
+            k/=10;
+            i--;
         }
-        return NewList;
-
+        Collections.reverse(res);
+        return res;
     }
-
-
 }
+
