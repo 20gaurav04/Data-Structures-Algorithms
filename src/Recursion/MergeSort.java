@@ -4,59 +4,57 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int [] arr = {5,6,1,14,6,88,2};
-        int[] res = mergeSort(arr);
-        System.out.println(Arrays.toString(res));
+        int[] arr = {5, 6, 1, 14, 6, 88, 2};
+        mergeSort(arr, 0, arr.length);
+        System.out.println(Arrays.toString(arr));
     }
-    static int[] mergeSort(int [] arr )
-    {
-        if(arr.length==1)
-        {
-            return arr;
+
+    static void mergeSort(int[] arr, int s, int e) {
+        if (e - s <= 1) { // Base case: single element is already sorted
+            return;
         }
-        int mid = arr.length/2;
 
-        int[] left = mergeSort(Arrays.copyOfRange(arr,0,mid));
-        int[] right = mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
+        int mid = (s + e) / 2;
 
-        return merge(left,right);
+        mergeSort(arr, s, mid);
+        mergeSort(arr, mid, e);
+
+        merge(arr, s, mid, e);
     }
-    private static int[] merge(int[] first,int[] second)
-    {
-        int[] mix = new int[first.length + second.length];
 
-        int i = 0;
-        int j = 0;
-        int k =0;
+    private static void merge(int[] arr, int s, int m, int e) {
+        int[] mix = new int[e - s];
 
-        while(i<first.length && j<second.length)
-        {
-            if(first[i] < second[j])
-            {
-                mix[k]=first[i];
+        int i = s;
+        int j = m;
+        int k = 0;
+
+        while (i < m && j < e) {
+            if (arr[i] <= arr[j]) {
+                mix[k] = arr[i];
                 i++;
-            }
-            else {
-                mix[k]=second[j];
+            } else {
+                mix[k] = arr[j];
                 j++;
             }
             k++;
         }
 
-//        may be possible that one of the arrays is not complete
-        while(i<first.length)
-        {
-            mix[k]=first[i];
+        while (i < m) {
+            mix[k] = arr[i];
             i++;
             k++;
         }
-        while(j<second.length)
-        {
-            mix[k]=second[j];
+
+        while (j < e) {
+            mix[k] = arr[j];
             j++;
             k++;
         }
-        return mix;
-    }
 
+        // Copy the sorted elements back into the original array
+        for (int l = 0; l < mix.length; l++) {
+            arr[s + l] = mix[l];
+        }
+    }
 }
