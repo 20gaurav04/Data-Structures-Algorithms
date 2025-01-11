@@ -1,6 +1,6 @@
 package Strings;
 
-public class RemovingACharacter {
+public class Stringss {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder("Hello");
 //        string builder is mutable and unlike strings it modifies the original object itself
@@ -12,6 +12,7 @@ public class RemovingACharacter {
         for (char ch : str.toCharArray()) {
             System.out.print(ch);
         }
+
 
     }
 }
