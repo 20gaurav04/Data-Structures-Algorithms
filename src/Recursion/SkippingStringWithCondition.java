@@ -14,7 +14,7 @@ public class SkippingStringWithCondition {
             return "" ;
         }
         if(s.startsWith("app") && !s.startsWith("apple"))
-//        it will skip app only when it is not apple
+//        it will skip app only when it is not applez
         {
             return skip(s.substring(3));
         }
