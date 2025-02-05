@@ -2,8 +2,8 @@ package Recursion;
 
 public class nto1 {
     public static void main(String[] args) {
-//        fun(5);
-        funRev(5);
+//        fun(1);
+//        funRev(5);
         funBoth(5);
     }
     static void fun(int n)
@@ -32,7 +32,5 @@ public class nto1 {
         System.out.println(n);
         funRev(n-1);
         System.out.println(n);
-
-
     }
 }
