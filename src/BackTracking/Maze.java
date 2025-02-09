@@ -1,5 +1,7 @@
 package BackTracking;
 
+import Patterns.A;
+
 import java.util.ArrayList;
 
 public class Maze {
@@ -8,7 +10,8 @@ public class Maze {
 //       int res =  ways(3,3);
 //        System.out.println(res);
 //        ways1("",3,3);
-        ArrayList<String> res = new ArrayList<>(ways2("",4,4));
+//        ArrayList<String> res = new ArrayList<>(ways2("",4,4));
+        ArrayList<String> res = new ArrayList<>(ways3("",3,3));
         System.out.println(res);
 
     }
@@ -42,22 +45,47 @@ public class Maze {
     }
     static ArrayList<String> ways2(String p , int rows , int cols)
     {
-
-        if(rows==1 && cols==1)
+        if(cols==1&&rows==1)
         {
             ArrayList<String> res = new ArrayList<>();
             res.add(p);
             return res;
         }
-        ArrayList<String> res = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
+
         if(rows>1)
         {
-            res.addAll(ways2(p +'D',rows-1,cols));
+            list.addAll(ways2(p+'D',rows-1,cols));
         }
         if(cols>1)
         {
-            res.addAll(ways2(p +'R',rows,cols-1));
+            list.addAll(ways2(p+'R',rows,cols-1));
         }
-        return res;
+        return list;
+    }
+
+    static ArrayList<String> ways3(String p , int rows , int cols)
+    {
+        if(cols==1&&rows==1)
+        {
+            ArrayList<String> res = new ArrayList<>();
+            res.add(p);
+            return res;
+        }
+        ArrayList<String> list = new ArrayList<>();
+
+        if(rows>1 && cols>1)
+        {
+            list.addAll(ways3(p+'D',rows-1,cols-1));
+        }
+        if(rows>1)
+        {
+            list.addAll(ways3(p+'V',rows-1,cols));
+        }
+        if(cols>1)
+        {
+            list.addAll(ways3(p+'H',rows,cols-1));
+        }
+        return list;
     }
 }
