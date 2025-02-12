@@ -1,5 +1,5 @@
 package Strings;
-
+//https://leetcode.com/problems/remove-all-occurrences-of-a-substring/description/
 public class RemovingSubStringOccurrence {
     public static void main(String[] args) {
         String s = "axyxxxyyyyb";
@@ -14,6 +14,8 @@ public class RemovingSubStringOccurrence {
         int index;
 
         while((index = res.indexOf(part))!=-1)
+//        indexOf takes the first occurrence of the part in the res;
+//            so, in the first iteration index will be 4 as xy as complete occurring at 4
         {
             res.delete(index,index+part.length());
         }
