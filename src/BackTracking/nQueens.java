@@ -4,16 +4,18 @@ public class nQueens {
     public static void main(String[] args) {
         int n = 4 ;
         boolean[][] track = new boolean[n][n];
-        queens(track,0);
+//        queens(track,0);
+        int res = queens(track,0);
+        System.out.println(res);
     }
-
-        static int queens(boolean[][] board, int row) {
-        if (row == board.length) {
+    static int queens(boolean[][] board,int row)
+    {
+        if(row==board.length)
+        {
             display(board);
             System.out.println();
             return 1;
         }
-
         int count = 0;
 
         // placing the queen and checking for every row and col
@@ -27,9 +29,9 @@ public class nQueens {
         }
 
         return count;
-    }
 
-        private static boolean isSafe(boolean[][] board, int row, int col) {
+    }
+    private static boolean isSafe(boolean[][] board, int row, int col) {
         // check vertical row
         for (int i = 0; i < row; i++) {
             if (board[i][col]) {
@@ -44,7 +46,6 @@ public class nQueens {
                 return false;
             }
         }
-
         // diagonal right
         int maxRight = Math.min(row, board.length - col - 1);
         for (int i = 1; i <= maxRight; i++) {
@@ -56,13 +57,19 @@ public class nQueens {
         return true;
     }
 
-        private static void display(boolean[][] board) {
-        for(boolean[] row : board) {
-            for(boolean element : row) {
-                if (element) {
-                    System.out.print("Q ");
-                } else {
-                    System.out.print("X ");
+    private static void display(boolean[][] board)
+    {
+        for(boolean[] row:board)
+        {
+            for(boolean element : row)
+            {
+                if(element)
+                {
+                    System.out.print(" Q ");
+                }
+                else{
+
+                    System.out.print(" X ");
                 }
             }
             System.out.println();
