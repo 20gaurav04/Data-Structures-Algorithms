@@ -5,7 +5,7 @@ public class CountNum {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("enter a:");
-        long a = sc.nextInt();
+        long a = sc.nextLong();
 
         int count = 0;
         while(a>0) {
@@ -13,11 +13,9 @@ public class CountNum {
             if (rem == 7) {
                 count++;
             }
-            else{
-                count =0;
-            }
             a = a / 10;
-        }System.out.print("val"+count);
+        }
+        System.out.print("Number of times 7 appeared : "+count);
 
 
 
