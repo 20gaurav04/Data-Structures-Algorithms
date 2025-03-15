@@ -10,7 +10,7 @@ public class PowerOf3 {
         static boolean checkPowersOfThree(int n) {
                     while (n > 0) {
                         if (n % 3 == 2) {  // If any digit in base-3 is '2', return false
-//                            here  12 in base 3 would be =      1 + 3^2  + 1 * 3^1 + 0 * 3^0 = 110 (only contains 11
+//                            here  12 in base 3 would be =      1 + 3^2  + 1 * 3^1 + 0 * 3^0 = 110 (only contains 11)
                             return false;
                         }
                         n /= 3;
