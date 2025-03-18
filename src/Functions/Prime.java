@@ -24,7 +24,9 @@ public class Prime {
             }
             c++;
         }
-        return c*c>n;
+        return true;
+
+//no divisors found
 
     }
 }
