@@ -13,7 +13,9 @@ public class Basics {
 
 //            System.out.println(Arrays.toString(name));
         Student Gaurav = new Student();
-        System.out.println(Gaurav);
+        Student Rahul = new Student();
+        System.out.println(Rahul.name);
+//        System.out.println(Gaurav);
         System.out.println(Gaurav.roll);
 //        the dot here signifies the roll inside the object gaurav;
         System.out.println(Gaurav.name);
