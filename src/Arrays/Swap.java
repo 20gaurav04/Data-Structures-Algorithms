@@ -2,7 +2,7 @@ package Arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Swap {
     public static void main(String[] args) {
         int[] arr = new int[5];
         Input(arr);
