@@ -5,6 +5,7 @@ public class Box {
     double l = -1;
     double b = -1;
     double h = -1;
+    double weight = 5;
 
     Box()
     {
@@ -23,5 +24,9 @@ public class Box {
         this.l = len;
         this.b = bre;
         this.h = hei;
+    }
+    Box(Box old)
+    {
+        this.weight = weight;
     }
 }

@@ -11,6 +11,13 @@ public class WeightedBox extends Box{
     public WeightedBox(double l , double b , double h , double weight)
     {
         super(l,b,weight);
+//        this will call the constructor just above it which is taking 3 arguments i.e., Box;
         this.weight = weight;
     }
+    WeightedBox(WeightedBox other)
+    {
+        super(other);
+        weight = other.weight;
+    }
+
 }
