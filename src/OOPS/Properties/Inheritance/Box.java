@@ -7,6 +7,11 @@ public class Box {
     double h = -1;
     double weight = 5;
 
+    static void greeting()
+    {
+        System.out.println("Hello, how is going today ?");
+    }
+
     Box()
     {
         this.l = l;

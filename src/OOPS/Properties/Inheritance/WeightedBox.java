@@ -19,5 +19,8 @@ public class WeightedBox extends Box{
         super(other);
         weight = other.weight;
     }
-
+    static void greeting()
+    {
+        System.out.println("hello from super-class !");
+    }
 }

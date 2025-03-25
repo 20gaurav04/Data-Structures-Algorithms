@@ -9,7 +9,10 @@ public class Main {
 //        s1.area();
 
         Shape square = new Square();
-        square.area();
+                square.area();
+//        Shape circle = new Circle();
+//        circle.area();
+
 
 //        Square shape = new Shape();
     }
