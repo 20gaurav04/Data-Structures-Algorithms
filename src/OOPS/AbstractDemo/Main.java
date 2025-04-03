@@ -8,7 +8,7 @@ public class Main {
         Son son = new Son(35);
         son.career();
 
-        Daughter daughter = new Daughter();
+        Daughter daughter = new Daughter(66);
         daughter.hobby();
     }
 }
