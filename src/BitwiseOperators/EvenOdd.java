@@ -1,7 +1,7 @@
 package BitwiseOperators;
 import java.util.*;
 
-public class EvenOdd {
+public class    EvenOdd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter num to check : ");

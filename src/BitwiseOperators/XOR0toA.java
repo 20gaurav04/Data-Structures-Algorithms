@@ -2,7 +2,7 @@ package BitwiseOperators;
 
 public class XOR0toA {
     public static void main(String[] args) {
-        int a = 5;
+        int a = 8;
         int ans = 0;
 
         for(int i = 0 ; i<=5;i++)
