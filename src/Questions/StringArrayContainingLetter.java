@@ -13,6 +13,7 @@ public class StringArrayContainingLetter {
         for(int i = 0 ; i<arr.length;i++)
         {
             if(arr[i].contains(String.valueOf(x))){
+//                String.valueOf will check that whatever x is containing belongs to that particular string
                 lst.add(i);
             }
         }
