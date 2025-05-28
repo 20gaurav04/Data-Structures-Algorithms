@@ -36,6 +36,84 @@ public class LL {
         tail = node;
         size+=1;
     }
+
+    public void insert(int data , int index)
+    {
+        if(index==0)
+        {
+            insertFirst(data);
+            return;
+        }
+        if(index==size)
+        {
+            insertLast(data);
+            return;
+        }
+        Node temp = head;
+        for(int i = 1 ; i<index;i++)
+        {
+            temp = temp.next;
+        }
+        Node node = new Node(data,temp.next);
+        temp.next = node;
+
+        size++;
+    }
+
+    public int deleteFirst()
+    {
+        if(size==0)
+        {
+            return -1;
+        }
+        int val = head.data;
+        Node temp = head;
+        head = temp.next;
+        size--;
+        if(head==null) tail=null;
+        return val;
+    }
+
+    public int deleteLast() {
+        if(size<=1)
+        {
+            return deleteFirst();
+        }
+
+        Node secondLast = get(size - 2);
+        int val = tail.data;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+
+        return val;
+    }
+
+    public int delete(int index)
+    {
+        if(index==0)
+        {
+            return deleteFirst();
+        }
+        if(index==size-1)
+        {
+            return deleteLast();
+        }
+        Node prev = get(index -1 );
+        int val = prev.next.data;
+        prev.next = prev.next.next;
+        return val;
+
+    }
+    public Node get(int index)
+    {
+        Node node = head;
+        for(int i = 0 ; i<index;i++)
+        {
+            node = node.next;
+        }
+        return node;
+    }
     public void display(){
         Node temp = head;
         while(temp !=null)
@@ -45,6 +123,19 @@ public class LL {
         }
         System.out.println("End");
 
+    }
+    public Node  find(int val)
+    {
+        Node searchingItem = head;
+        while(searchingItem!=null)
+        {
+            if(searchingItem.data==val)
+            {
+                return searchingItem;
+            }
+            searchingItem = searchingItem.next;
+        }
+        return null;
     }
     private class Node {
 
@@ -62,5 +153,9 @@ public class LL {
             this.next = next;
         }
 
+        @Override
+        public String toString() {
+            return "Node(data=" + data + ")";
+        }
     }
 }

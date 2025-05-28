@@ -11,6 +11,15 @@ public class Main {
         list.insertLast(95);
         list.insertFirst(85);
 
+        list.insert(54,2);
+        list.deleteFirst();
+
+        System.out.println(list.deleteLast());
         list.display();
+
+        System.out.println(list.delete(2));
+        list.display();
+
+        System.out.println(list.find(43));
     }
 }
