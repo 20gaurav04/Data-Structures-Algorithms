@@ -193,17 +193,64 @@ public class LL {
         tail.next = null;
     }
 
-    public static void main(String[] args) {
-        LL list = new LL();
-        list.insertLast(1);
-        list.insertLast(1);
-        list.insertLast(2);
-        list.insertLast(2);
-        list.insertLast(3);
-        list.display();
+//    merging 2 sorted lists;
+    public LL merge(LL first , LL second)
+    {
+        Node f = first.head;
+        Node s = second.head;
 
-        list.removeDuplicate();
-        list.display();
+        LL ans = new LL();
+
+        while(f.next != null && s.next !=null)
+        {
+            if(f.data <= s.data)
+            {
+                ans.insertLast(f.data);
+                f = f.next;
+            }
+            else
+            {
+                ans.insertLast(s.data);
+                s = s.next;
+            }
+        }
+//        only 1 of the while loops will run in case of the size of 2 lists are not same
+        while(f.next !=null)
+        {
+            ans.insertLast(f.data);
+            f = f.next;
+        }
+        while(s.next !=null)
+        {
+            ans.insertLast(s.data);
+            s = s.next;
+        }
+        return ans;
     }
+    public static void main(String[] args) {
+//        LL list = new LL();
+//        list.insertLast(1);
+//        list.insertLast(1);
+//        list.insertLast(2);
+//        list.insertLast(2);
+//        list.insertLast(3);
+//        list.display();
+//        list.removeDuplicate();
+//        list.display();
+        LL list1 = new LL();
+        list1.insertLast(1);
+        list1.insertLast(2);
+        list1.insertLast(4);
+
+        LL list2 = new LL();
+        list2.insertLast(1);
+        list2.insertLast(5);
+        list2.insertLast(6);
+        list2.insertLast(9);
+
+        LL ans = list1.merge(list1 , list2);
+        ans.display();
+    }
+
 }
 
