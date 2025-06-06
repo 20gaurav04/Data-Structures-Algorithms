@@ -75,7 +75,7 @@ public class CycleQuestions {
             second = second.next;
             length--;
         }
-//        keep moving both forward and they will meet at the start
+//        keep moving both forward and they will meet at the start of the cycle
 
         while(first!=second)
         {
