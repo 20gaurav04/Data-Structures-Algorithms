@@ -5,56 +5,58 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {5, 6, 1, 14, 6, 88, 2};
-        mergeSort(arr, 0, arr.length);
-        System.out.println(Arrays.toString(arr));
+        int[] ans = mergeSort(arr);
+        System.out.println(Arrays.toString(ans));
     }
-
-    static void mergeSort(int[] arr, int s, int e) {
-        if (e - s <= 1) { // Base case: single element is already sorted
-            return;
+    static int[] mergeSort(int[] arr)
+    {
+        if(arr.length==1)
+        {
+            return arr;
         }
+        int len = arr.length;
+        int mid = len/2;
 
-        int mid = (s + e) / 2;
+        int[] left = mergeSort(Arrays.copyOfRange(arr,0,mid));
+        int[] right = mergeSort(Arrays.copyOfRange(arr,mid,len));
 
-        mergeSort(arr, s, mid);
-        mergeSort(arr, mid, e);
-
-        merge(arr, s, mid, e);
+        return merge(left,right);
     }
-
-    private static void merge(int[] arr, int s, int m, int e) {
-        int[] mix = new int[e - s];
-
-        int i = s;
-        int j = m;
+    static int[] merge (int[] left , int[] right)
+    {
+        int[] mix = new int[left.length + right.length];
+        int i = 0;
+        int j = 0;
         int k = 0;
 
-        while (i < m && j < e) {
-            if (arr[i] <= arr[j]) {
-                mix[k] = arr[i];
+        while(i<left.length && j<right.length)
+        {
+            if(left[i]<right[j])
+            {
+                mix[k] = left[i];
                 i++;
-            } else {
-                mix[k] = arr[j];
+            }
+            else
+            {
+                mix[k] = right[j];
                 j++;
             }
             k++;
         }
-
-        while (i < m) {
-            mix[k] = arr[i];
+//might be possible that one of the arrays might not be complete so one of the loops would run.
+        while(i<left.length)
+        {
+            mix[k] = left[i];
             i++;
             k++;
         }
 
-        while (j < e) {
-            mix[k] = arr[j];
+        while(j<right.length)
+        {
+            mix[k] = right[j];
             j++;
             k++;
         }
-
-        // Copy the sorted elements back into the original array
-        for (int l = 0; l < mix.length; l++) {
-            arr[s + l] = mix[l];
-        }
+        return mix;
     }
 }
