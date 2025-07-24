@@ -17,14 +17,14 @@ public class RedundantParentheses {
                 stk.push(ch);
             }
             else{
-//                either we get an ')' or any alphabets
+//                either we get a closing bracket or any alphabets
                 if(ch==')')
                 {
                     boolean redundant = true;
                     char top = stk.peek();
                     while(!stk.isEmpty() && stk.peek() != '('){
                         stk.pop();
-                        if(top=='+' || top=='+' || top=='*' || top=='-') {
+                        if(top=='+' || top=='/' || top=='*' || top=='-') {
                             redundant = false;
                         }
                     }
