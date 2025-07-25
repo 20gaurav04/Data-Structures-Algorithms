@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class RedundantParentheses {
     public static void main(String[] args) {
-        String s = "((a+b))";
+        String s = "b";
         System.out.println(isRedundant(s));
     }
     static boolean isRedundant(String s)
@@ -39,5 +39,6 @@ public class RedundantParentheses {
             }
         }
         return false;
+
     }
 }
