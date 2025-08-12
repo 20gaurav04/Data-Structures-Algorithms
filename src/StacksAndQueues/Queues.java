@@ -17,6 +17,8 @@ public class Queues {
 //        removes the first elements as it works on FIFO logic.
 
         System.out.println(s.poll());
+//        poll removes the head and returns null if empty whereas
+//        remove() would return NoSuchElementException
         System.out.println(s.peek());
 
     }

@@ -2,8 +2,6 @@ package Trees.BST;
 import java.util.*;
 
 
-
-
 class Tree
 {
     Tree left , right;

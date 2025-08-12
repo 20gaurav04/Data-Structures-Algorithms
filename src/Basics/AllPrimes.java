@@ -5,7 +5,7 @@ import java.util.*;
 class AllPrimes{
     public static void main(String[] args) {
         int start = 5;
-        int end = 50;
+        int end = 100;
         // ArrayList<Integer> lst  = new ArrayList<>();
         System.out.println(allPrimes(start,end));
     }
